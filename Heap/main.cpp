@@ -30,8 +30,8 @@ void buildHeap( vector<int>& arr, int arrSize){
     for (int i=index; i>=0; i--){
         heapify (arr, arrSize, i);
     }
-    cout<<"Heap is built"<<endl;
-    displayArray(arr, arrSize);
+//     cout<<"Heap is built"<<endl;
+//     displayArray(arr, arrSize);
 }
 
 void heapSort(vector<int>& arr, int arrSize){
@@ -58,8 +58,8 @@ void insertToHeap(vector<int>& arr, int &arrSize, int val){
         }
         else break;
     }
-    cout<<val << " inserted"<<endl;
-    displayArray(arr, arrSize) ;
+//     cout<<val << " inserted"<<endl;
+//     displayArray(arr, arrSize) ;
 }
 
 void removeMax(vector<int>& arr, int &arrSize){

@@ -13,10 +13,11 @@ void heapify(vector<int>& arr, int n, int i){
     int largest=i;
     int left=2*i +1;
     int right =2*i +2;
-
+    //find the max of left and right values and update the largest
     if (left<n && arr[left]>arr[largest]) largest=left;
     if (right<n && arr[right]> arr[largest])  largest=right;
 
+    //if the largest i updated swap those and perform heapify on the changed position
     if (largest!=i){
         swap(arr[largest], arr[i]);
         heapify(arr, n , largest); //recursively heapify largest
@@ -29,9 +30,10 @@ void buildHeap( vector<int>& arr, int arrSize){
 
     for (int i=index; i>=0; i--){
         heapify (arr, arrSize, i);
+        cout<<"Heap is built"<<endl;
+        displayArray(arr, arrSize);
     }
-//     cout<<"Heap is built"<<endl;
-//     displayArray(arr, arrSize);
+
 }
 
 void heapSort(vector<int>& arr, int arrSize){
@@ -50,6 +52,7 @@ void insertToHeap(vector<int>& arr, int &arrSize, int val){
     arrSize++;
     arr.push_back(val);
     int i=arrSize-1;
+    //insert to the larget position and bring it up the heap if it is greater than the parent else break
     while (i!=0){
         int parent =(i-1)/2;
         if (arr[parent]<arr[i]) {
@@ -75,7 +78,9 @@ int main()
     int arrSize=10;
     vector<int> heap_arr;
     for (int i = 0; i < arrSize; i++)  heap_arr.push_back(rand() % 100);
-
+    //initial array
+    cout<<"Initial Array"<<endl;
+    displayArray(heap_arr,arrSize);
     //buildHeap
     buildHeap(heap_arr, arrSize);
 

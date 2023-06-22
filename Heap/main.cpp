@@ -42,7 +42,7 @@ void heapSort(vector<int>& arr, int arrSize){
 
    // extracting elements from heap one by one
    for (int i=arrSize -1; i>=0; i--){
-        swap(arr[0], arr[i]);
+        swap(arr[0], arr[i]); //update the last position with the max
         heapify (arr, i, 0);
     }
 
